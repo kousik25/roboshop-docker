@@ -30,45 +30,45 @@ services:
     - shipping
     - payment
 
-  redis:
-    image: redis
-    container_name: redis
+  # redis:
+  #   image: redis
+  #   container_name: redis
 
-  user:
-    image: user:1
-    container_name: user
-    depends_on:
-    - redis
-    - mongodb
+  # user:
+  #   image: user:1
+  #   container_name: user
+  #   depends_on:
+  #   - redis
+  #   - mongodb
 
-  cart:
-    image: cart:1
-    container_name: cart
-    depends_on:
-    - redis
-    - catalogue
+  # cart:
+  #   image: cart:1
+  #   container_name: cart
+  #   depends_on:
+  #   - redis
+  #   - catalogue
 
-  mysql:
-    image: mysql:1
-    container_name: mysql
+  # mysql:
+  #   image: mysql:1
+  #   container_name: mysql
 
-  shipping:
-    image: shipping:1
-    container_name: shipping
-    depends_on:
-    - mysql
+  # shipping:
+  #   image: shipping:1
+  #   container_name: shipping
+  #   depends_on:
+  #   - mysql
 
-  rabbitmq:
-    container_name: rabbitmq
-    image: rabbitmq
-    environment:
-    - RABBITMQ_DEFAULT_USER=roboshop
-    - RABBITMQ_DEFAULT_PASS=roboshop123
+  # rabbitmq:
+  #   container_name: rabbitmq
+  #   image: rabbitmq
+  #   environment:
+  #   - RABBITMQ_DEFAULT_USER=roboshop
+  #   - RABBITMQ_DEFAULT_PASS=roboshop123
 
-  payment:
-    container_name: payment
-    image: payment:1
-    depends_on:
-    - rabbitmq
-    - user
-    - cart
+  # payment:
+  #   container_name: payment
+  #   image: payment:1
+  #   depends_on:
+  #   - rabbitmq
+  #   - user
+  #   - cart
